@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>document</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<h3 style="color:#de123a；font-size:20px;margin:50px auto;text-align:center;">大家好</h3>
+
+用户名：<input type="text" class="username" placeholder="用户名" name="user"><BR>
+密码： <input type="password" class="pwd" name="pwd"><br>
+<input type="button" class="signin" value="注册" name="">
+<input type="button" class="login" value="登录" name="">
+<script type="text/javascript">
+	$(function(){
+		$('.signin').on('click' , function(){
+			$.ajax({
+				url : '/user',
+				type : 'post',
+				data : {
+					act : 'signin',
+					username : $('.username').val(),
+					pwd : $('.pwd').val()
+				},
+				success:function(data){
+					console.log(data)
+				}
+			})
+		})
+		$('.login').on('click' , function(){
+			$.ajax({
+				url : '/user',
+				type : 'post',
+				data : {
+					act : 'login',
+					username : $('.username').val(),
+					pwd : $('.pwd').val()
+				},
+				success:function(data){
+					console.log(data)
+				}
+			})
+		})
+		
+	})
+</script>
+
+</body>
+</html>

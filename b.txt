@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>document</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<h3 style="color:#de123a；font-size:20px;margin:50px auto;text-align:center;">大家好</h3>
+</body>
+</html>
+get url --> url.query url.parse(req.url,true)
