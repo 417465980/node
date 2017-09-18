@@ -14,13 +14,14 @@ server.listen(8080);
 server.use(expressstatic('./www'));
 
 */
-
+const ejs = require('ejs');
 const express = require('express');
 const expressStatic = require('express-static');
 
 var server = express();
 server.listen(8080);
 server.use(expressStatic('./www'));
+server.use()
 /*server.get('/user',function(req,res){
 	req.on('data', function(data){
 		str += data;
@@ -114,4 +115,3 @@ server.use(expressStatic('./www'));
 		
 	});
 }).listen(8080)*/
-
