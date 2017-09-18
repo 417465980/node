@@ -1,10 +1,8 @@
-exprots.sum = function(){
-	var res = 0;
-	for (var i = 0; i < arguments.length; i++) {
-		res += arguments[i]
+module.exports ={
+	a:12,
+	b:14,
+	c:function(a){
+		return a
 	}
-	return res;
 }
-exprots.div = function(a,b){
-	return a/b
-}
+

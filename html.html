@@ -7,12 +7,14 @@
 </head>
 <body>
 <h3 style="color:#de123a；font-size:20px;margin:50px auto;text-align:center;">大家好</h3>
-
+<!-- 
 用户名：<input type="text" class="username" placeholder="用户名" name="user"><BR>
 密码： <input type="password" class="pwd" name="pwd"><br>
 <input type="button" class="signin" value="注册" name="">
-<input type="button" class="login" value="登录" name="">
-<script type="text/javascript">
+<input type="button" class="login" value="登录" name=""> -->
+
+
+<!-- <script type="text/javascript">
 	$(function(){
 		$('.signin').on('click' , function(){
 			$.ajax({
@@ -44,7 +46,85 @@
 		})
 		
 	})
+</script> -->
+
+
+
+<!-- <form action="http://localhost:8080" method="post">
+	用户名：<input type="text" class="user" name="username"><br>
+	<input type="submit" class="sub" value="提交" name="">
+</form> -->
+<input type="text" class="user" name="username"><br>
+<input type="button" class="sub" value="提交" name="">
+<hr>
+<div class="box"></div>
+<script>
+/*	document.querySelector('.sub').onclick =function(){
+		document.querySelector(".box").innerHTML =document.querySelector('.user').value;
+	};*/
+	
+function runForSeconds(s) {
+    var start = +new Date();
+    //console.log(start,new Date().getTime())
+    while (start + s * 1000 > (+new Date())) {}
+}
+
+document.querySelector('.sub').addEventListener("click", function () {
+    runForSeconds(10); 
+}, false);
+
+setTimeout(function () {
+    console.log("Done!");
+}, 1000 * 3);
+
+
+function unique(a) {
+  var res = [];
+ 
+  for (var i = 0, len = a.length; i < len; i++) {
+    var item = a[i];
+ 
+    for (var j = 0, jLen = res.length; j < jLen; j++) {
+      if (res[j] === item)
+        break;
+    }
+ 
+    if (j === jLen)
+      res.push(item);
+  }
+ 
+  return res;
+}
+ 
+function any(arr){
+	var res = []
+	for(var i=0;i<arr.length; i++){
+		for (var j = 1+i; j < arr.length; j++) {
+			if(arr[i] === arr[j]){
+				j = ++i
+			}
+			res.push(arr[i])
+			
+		}
+		
+	}
+	return res
+}
+
+var a = [1, 1, '1', '2', 1];
+/*var ans = unique(a);*/
+//console.log(ans); // => [1, "1", "2"]
+console.log(any(a))
+
+function fn(){}
+console.log(fn.prototype.constructor === fn)
+console.log(Object instanceof Function)
 </script>
+1**:服务器收到请求 需要请求者继续操作
+2**: 请求成功
+3**：重定向 需要进一步的操作以完成请求
+4**：客服端错误
+5**：服务端错误
 
 </body>
 </html>
