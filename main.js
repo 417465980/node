@@ -115,3 +115,8 @@ server.use()
 		
 	});
 }).listen(8080)*/
+// 创建分支 git checkout -b fenzhi
+// 跳转到主轴 git checkout master
+//合并分支 git merge fenzhi（合并）
+//删除分支 git branch -d fenzhi
+//查看分支 git branch(分支)
