@@ -17,11 +17,30 @@ server.use(expressstatic('./www'));
 const ejs = require('ejs');
 const express = require('express');
 const expressStatic = require('express-static');
-
+const fs = require("fs");
 var server = express();
+var  str =  "";
 server.listen(8080);
-server.use(expressStatic('./www'));
-server.use()
+server.use('/',function(req,res){
+	var readerStream = fs.createReadStream(__dirname + '/public/index.html');
+
+	readerStream.setEncoding('UTF8');
+	readerStream.on('data',function(data){
+		
+		str += data;
+	})
+	readerStream.on('end',function(){
+		
+		res.send(str);
+		res.end()
+	})
+	
+})
+
+
+
+server.use(express.static('./public'));
+
 /*server.get('/user',function(req,res){
 	req.on('data', function(data){
 		str += data;
@@ -120,3 +139,4 @@ server.use()
 //合并分支 git merge fenzhi（合并）
 //删除分支 git branch -d fenzhi
 //查看分支 git branch(分支)
+
